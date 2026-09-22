@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#161514">
+<title>PizzaBoro — The Finest Pizzeria, Niagara Falls</title>
+<meta name="description" content="Hand-stretched pizza, wings and sides in Niagara Falls. Dine-in, takeout and local delivery, open late.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coal:#161514;
+  --coal-2:#1f1d1b;
+  --coal-3:#2a2724;
+  --amber:#ec9a33;
+  --amber-dk:#c9701b;
+  --ember:linear-gradient(100deg,#f3ab45 0%,#e0801f 100%);
+  --paper:#f7f3ee;
+  --ink:#1b1a19;
+  --mute:#b9b2aa;
+  --mute-dk:#76706a;
+  --hair:rgba(255,255,255,.12);
+  --head:'Raleway',system-ui,sans-serif;
+  --body:'Raleway',system-ui,-apple-system,sans-serif;
+  --script:'Kaushan Script',cursive;
+  --gut:clamp(20px,4.5vw,96px);
+  --maxw:1760px;
+  --hh:84px;
+}
+*{box-sizing:border-box;border-radius:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;color:#fff;font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;
+  background:var(--coal) url("assets/stone.jpg") repeat;background-size:520px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+section{position:relative;scroll-margin-top:calc(var(--hh) + 6px)}
+h1,h2,h3,h4{font-family:var(--head);margin:0;line-height:1.08;font-weight:600;letter-spacing:-.01em}
+.ic{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.sec{padding:clamp(72px,8vw,130px) 0}
+
+/* section heading: index number + label + title, thin amber rule */
+.kicker{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+.kicker::before{content:attr(data-n);font-size:13px;color:var(--mute);letter-spacing:.1em}
+.kicker::after{content:"";width:48px;height:1px;background:var(--amber)}
+.title{font-size:clamp(34px,4vw,60px);margin-top:14px}
+.title em{font-family:var(--script);font-style:normal;font-weight:400;color:var(--amber);letter-spacing:0}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(32px,4vw,56px)}
+.head.center{flex-direction:column;align-items:center;text-align:center}
+.head.center .kicker::after{display:none}
+
+/* buttons: square, clean */
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border:0;cursor:pointer;
+  background:var(--ember);color:#1a1107;font-family:var(--head);font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  transition:filter .2s,background .2s,color .2s,box-shadow .2s}
+.btn:hover{filter:brightness(1.08)}
+.btn svg{width:16px;height:16px;stroke-width:2.2}
+.btn-line{background:none;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+.btn-line:hover{filter:none;box-shadow:inset 0 0 0 1px var(--amber);color:var(--amber)}
+.btn-sm{min-height:42px;padding:0 20px;font-size:13px}
+.olink{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 18px;white-space:nowrap;
+  font-family:var(--head);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--amber-dk);box-shadow:inset 0 0 0 1px currentColor;transition:background .2s,color .2s}
+.olink:hover{background:var(--amber);color:#1a1107;box-shadow:inset 0 0 0 1px var(--amber)}
+.olink.dark{color:var(--amber)}
+.open{position:absolute;inset:0;z-index:1;border:0;background:none;padding:0;cursor:pointer}
+
+/* ================= HEADER ================= */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s}
+.site-header::before{content:"";position:absolute;inset:0 0 -30px;z-index:-1;pointer-events:none;transition:opacity .35s;
+  background:linear-gradient(180deg,rgba(10,10,9,.75),rgba(10,10,9,0))}
+.site-header.scrolled,.site-header.solid{background:rgba(22,21,20,.97);box-shadow:0 1px 0 var(--hair)}
+.site-header.scrolled::before,.site-header.solid::before{opacity:0}
+.hbar{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);height:var(--hh);display:flex;align-items:center;gap:20px}
+.logo img{height:50px;width:auto}
+.mainnav{display:flex;gap:6px;margin-left:auto}
+.mainnav a{position:relative;padding:10px 14px;font-size:15px;font-weight:500;color:#e7e1db;transition:color .2s}
+.mainnav a::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:1px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.mainnav a:hover,.mainnav a[aria-current="true"]{color:#fff}
+.mainnav a:hover::after,.mainnav a[aria-current="true"]::after{transform:scaleX(1)}
+.htools{display:flex;align-items:center;gap:10px;margin-left:clamp(12px,2.4vw,40px)}
+.hicon{width:44px;height:44px;border:1px solid var(--hair);background:none;color:#fff;display:grid;place-items:center;cursor:pointer;transition:.2s}
+.hicon:hover,.hicon[aria-expanded="true"]{border-color:var(--amber);color:var(--amber)}
+.hicon svg{width:19px;height:19px}
+.h-order-sm,.burger{display:none}
+
+/* search */
+.spanel{position:absolute;left:0;right:0;top:100%;background:var(--coal-2);border-top:1px solid var(--hair);padding:18px 0 22px;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.spanel .searchbox{max-width:760px;margin:0 auto}
+.searchbox{position:relative}
+.searchbox>svg{position:absolute;left:18px;top:27px;transform:translateY(-50%);width:19px;height:19px;color:var(--mute);pointer-events:none}
+.searchbox input{width:100%;height:54px;border:1px solid var(--hair);background:rgba(255,255,255,.04);color:#fff;
+  font:400 16px var(--body);padding:0 16px 0 50px;outline:none;-webkit-appearance:none;transition:border-color .2s}
+.searchbox input::placeholder{color:var(--mute-dk)}
+.searchbox input:focus{border-color:var(--amber)}
+.searchbox input::-webkit-search-cancel-button{-webkit-appearance:none;width:20px;height:20px;cursor:pointer;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b9b2aa' stroke-width='2' stroke-linecap='round'><path d='M7 7l10 10M17 7 7 17'/></svg>") center/18px no-repeat}
+.results{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;background:var(--coal-2);border:1px solid var(--hair);
+  padding:6px;max-height:min(420px,60vh);overflow:auto;box-shadow:0 20px 40px rgba(0,0,0,.45)}
+.results.inline{position:static;margin-top:8px;box-shadow:none}
+.rrow{display:flex;align-items:center;gap:14px;width:100%;min-height:60px;padding:8px;border:0;background:none;text-align:left;cursor:pointer;color:#fff}
+.rrow:hover,.rrow:focus-visible{background:rgba(255,255,255,.06);outline:none}
+.rrow img{width:46px;height:46px;object-fit:cover;flex-shrink:0}
+.rrow span{flex:1;min-width:0}
+.rrow b{display:block;font-weight:600;font-size:15px}
+.rrow small{color:var(--mute);font-size:12.5px}
+.rrow em{font-style:normal;font-weight:700;color:var(--amber)}
+.rempty{padding:14px;color:var(--mute);font-size:14px}
+
+/* ================= HERO ================= */
+.hero{position:relative;overflow:hidden}
+.htrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}
+.htrack::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;
+  height:min(100svh,940px);min-height:600px;display:flex}
+.slide::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 78% 45%,rgba(236,154,51,.10),transparent 60%);pointer-events:none}
+.slide .in{position:relative;z-index:2;width:100%;max-width:var(--maxw);margin:0 auto;padding:calc(var(--hh) + 20px) var(--gut) 110px;
+  display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+.slide .tx{max-width:620px}
+.s-title{font-size:clamp(46px,min(5.8vw,10vh),96px);font-weight:600;line-height:1.02;margin-top:22px}
+.s-title em{display:block;font-family:var(--script);font-style:normal;font-weight:400;color:var(--amber);font-size:.62em;margin-bottom:.1em}
+.s-sub{font-size:clamp(17px,1.35vw,21px);font-weight:300;color:#e3ddd6;margin:22px 0 0;max-width:34ch;line-height:1.5}
+.s-price{display:flex;align-items:baseline;gap:14px;margin-top:22px}
+.s-price b{font-size:clamp(44px,4.4vw,72px);font-weight:700;background:var(--ember);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.s-price s{color:var(--mute-dk);font-size:20px}
+.s-price small{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.s-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.s-cta .btn{min-height:58px;padding:0 38px}
+.visual{position:relative;justify-self:end;width:min(52vw,90vh,940px);aspect-ratio:1;margin-right:calc(-1 * var(--gut) - 6vw)}
+.visual img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 40px 60px rgba(0,0,0,.6))}
+.visual.spin img{animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.visual .side{position:absolute;width:30%;height:auto;left:-8%;bottom:6%}
+.hbar-ctl{position:absolute;left:0;right:0;bottom:34px;z-index:5}
+.hbar-ctl .in{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);display:flex;align-items:center;gap:28px}
+.hcount{font-weight:700;font-size:15px;letter-spacing:.1em;min-width:62px}
+.hcount span{color:var(--mute-dk)}
+.hsegs{display:flex;gap:8px;flex:0 1 360px}
+.hseg{flex:1;height:30px;border:0;background:none;cursor:pointer;padding:0;position:relative}
+.hseg::before,.hseg i{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px}
+.hseg::before{background:rgba(255,255,255,.2)}
+.hseg i{background:var(--amber);transform-origin:left;transform:scaleX(var(--p,0))}
+.harrows{display:flex;gap:8px;margin-left:auto}
+.harrows button{width:50px;height:50px;border:1px solid var(--hair);background:rgba(0,0,0,.2);color:#fff;display:grid;place-items:center;cursor:pointer;transition:.2s}
+.harrows button:hover{border-color:var(--amber);color:var(--amber)}
+.harrows svg{width:20px;height:20px}
+.hsocial{display:none;position:absolute;right:calc(var(--gut) * .45);top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:20px;align-items:center}
+.hsocial a{opacity:.7;display:grid;place-items:center;width:30px;height:30px;transition:.2s}
+.hsocial a:hover{opacity:1;color:var(--amber)}
+.hsocial svg{width:18px;height:18px}
+.hsocial::before,.hsocial::after{content:"";width:1px;height:46px;background:var(--hair)}
+
+/* ================= BROWSE ================= */
+#browse{padding:clamp(56px,6vw,96px) 0;background:rgba(0,0,0,.25);border-block:1px solid var(--hair)}
+.browse-top{display:grid;grid-template-columns:1fr minmax(280px,460px);gap:40px;align-items:end;margin-bottom:36px}
+.cats{display:grid;grid-template-columns:repeat(9,1fr);border-left:1px solid var(--hair);border-top:1px solid var(--hair)}
+.cat{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:22px 12px 20px;text-align:center;
+  border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:background .25s}
+.cat img{width:min(96px,100%);aspect-ratio:1;object-fit:cover;border-radius:50%;transition:transform .5s}
+.cat span{font-size:13.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.cat em{position:absolute;top:10px;right:10px;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#1a1107;background:var(--amber);padding:2px 7px}
+.cat.on{background:rgba(236,154,51,.12);box-shadow:inset 0 -2px 0 var(--amber)}
+
+/* ================= WHY (numbered) ================= */
+#why{overflow:hidden}
+.why{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,100px);align-items:center}
+.why-img{position:relative;margin-left:calc(-1 * var(--gut) - 10vw);aspect-ratio:1}
+.why-img img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 30px 50px rgba(0,0,0,.6));animation:spin 160s linear infinite reverse}
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:30px}
+.step{display:grid;grid-template-columns:clamp(84px,8vw,130px) 1fr;gap:22px;align-items:center}
+.step:nth-child(even){margin-left:clamp(0px,5vw,90px)}
+.step b{font-size:clamp(64px,6.4vw,112px);font-weight:700;line-height:.9;letter-spacing:-.04em;
+  background:var(--ember);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:clamp(19px,1.5vw,23px);font-weight:600}
+.step p{margin:6px 0 0;color:var(--mute);max-width:44ch}
+
+/* ================= POPULAR (white menu-board cards) ================= */
+.ptrack{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px)/4);gap:24px;overflow-x:auto;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.ptrack::-webkit-scrollbar{display:none}
+.pcard{position:relative;background:var(--paper);color:var(--ink);padding:34px 26px 26px;display:flex;flex-direction:column;align-items:center;
+  text-align:center;scroll-snap-align:start;min-width:0;transition:transform .3s,box-shadow .3s}
+.pcard img{width:78%;aspect-ratio:1;object-fit:cover;border-radius:50%;filter:drop-shadow(0 16px 20px rgba(0,0,0,.2));transition:transform .7s}
+.ptag{position:absolute;top:0;left:0;background:var(--ink);color:var(--amber);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px}
+.pcard h3{font-size:24px;margin-top:22px}
+.pcard p{margin:6px 0 0;font-size:14px;color:var(--mute-dk);line-height:1.5;min-height:3em}
+.pline{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid #e4dcd2}
+.pline .pr{font-size:26px;font-weight:700;color:var(--amber-dk)}
+.pline small{display:block;font-size:12px;color:var(--mute-dk);text-align:left}
+.arrows{display:flex;gap:8px}
+.arrows button{width:50px;height:50px;border:1px solid var(--hair);background:none;color:#fff;display:grid;place-items:center;cursor:pointer;transition:.2s}
+.arrows button:hover:not(:disabled){border-color:var(--amber);color:var(--amber)}
+.arrows button:disabled{opacity:.3;cursor:default}
+.arrows svg{width:19px;height:19px}
+
+/* ================= DEALS ================= */
+#deals{background:rgba(0,0,0,.28);border-block:1px solid var(--hair)}
+.dealgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
+.dcard{position:relative;background:var(--coal-2);display:grid;grid-template-columns:1fr 1fr;min-height:260px;overflow:hidden}
+.dcard .ph{position:relative;overflow:hidden}
+.dcard .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.dcard .save{position:absolute;top:0;left:0;z-index:2;background:var(--ember);color:#1a1107;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 11px}
+.dcard .tx{padding:24px 22px;display:flex;flex-direction:column}
+.dcard h3{font-size:20px;line-height:1.2}
+.dcard .sub{font-size:14px;color:var(--mute);margin:8px 0 0}
+.dcard .pr{margin-top:auto;padding-top:14px;font-size:32px;font-weight:700;color:var(--amber);line-height:1}
+.dcard .olink{margin-top:14px;align-self:flex-start}
+
+/* ================= MENU ================= */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--hair);margin-bottom:40px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{background:none;border:0;color:var(--mute);cursor:pointer;white-space:nowrap;padding:16px 22px;position:relative;
+  font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:color .2s}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--amber);transform:scaleX(0);transition:transform .25s}
+.tabs button:hover,.tabs button[aria-selected="true"]{color:#fff}
+.tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+.mtrack{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px)/4);gap:24px;overflow-x:auto;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none}
+.mtrack::-webkit-scrollbar{display:none}
+.mcard{position:relative;scroll-snap-align:start;min-width:0}
+.mcard .ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--coal-3)}
+.mcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.mhd{display:flex;align-items:baseline;gap:10px;margin-top:18px}
+.mhd h4{font-size:21px;font-weight:600}
+.mhd i{flex:1;border-bottom:1px dotted rgba(255,255,255,.3);transform:translateY(-5px)}
+.mhd b{font-size:21px;font-weight:700;color:var(--amber)}
+.mcard p{margin:6px 0 0;font-size:14.5px;color:var(--mute);line-height:1.55}
+.mcard .olink{margin-top:14px}
+.mnav{display:flex;align-items:center;gap:26px;margin-top:40px}
+.mbar{flex:1;height:2px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
+.mbar i{position:absolute;left:0;top:0;bottom:0;background:var(--amber);transition:width .3s}
+
+/* ================= GALLERY ================= */
+.gallery{display:grid;grid-template-columns:1fr 2fr 1fr;grid-template-rows:repeat(2,clamp(180px,17vw,320px));gap:8px}
+.gallery figure{margin:0;position:relative;overflow:hidden;background:var(--coal-3)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.gallery .big,.gallery .tall{grid-row:span 2}
+.gallery figcaption{position:absolute;left:0;bottom:0;padding:10px 14px;background:rgba(22,21,20,.85);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+
+/* ================= REVIEWS ================= */
+.reviews{position:relative;max-width:980px;margin:0 auto;text-align:center}
+.rtrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.rtrack::-webkit-scrollbar{display:none}
+.review{flex:0 0 100%;scroll-snap-align:start;padding:0 70px}
+.review q{display:block;font-size:clamp(20px,2vw,28px);font-weight:300;line-height:1.45;quotes:none}
+.review q::before{content:"\201C";display:block;font-family:Georgia,serif;font-size:80px;line-height:.6;color:var(--amber);margin-bottom:14px}
+.review cite{display:block;margin-top:22px;font-style:normal;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.review cite span{display:block;margin-top:4px;color:var(--amber);letter-spacing:.3em}
+.reviews .rarr{position:absolute;top:40%;width:50px;height:50px;border:1px solid var(--hair);background:none;color:#fff;display:grid;place-items:center;cursor:pointer}
+.reviews .rarr:hover{border-color:var(--amber);color:var(--amber)}
+.reviews .rarr svg{width:20px;height:20px}
+.rarr.l{left:0}.rarr.r{right:0}
+.rdots{display:flex;justify-content:center;gap:4px;margin-top:30px}
+.rdots button{width:30px;height:30px;border:0;background:none;cursor:pointer;display:grid;place-items:center;padding:0}
+.rdots button::after{content:"";width:8px;height:8px;background:rgba(255,255,255,.3);transform:rotate(45deg)}
+.rdots button[aria-current="true"]::after{background:var(--amber)}
+
+/* ================= VISIT ================= */
+#visit{background:rgba(0,0,0,.28);border-top:1px solid var(--hair)}
+.visit{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,90px);align-items:stretch}
+.vlist{margin:36px 0 34px;border-top:1px solid var(--hair)}
+.vrow{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--hair)}
+.vrow dt{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);padding-top:3px}
+.vrow dd{margin:0;font-size:18px;font-weight:500}
+.vrow dd a:hover{color:var(--amber)}
+.vcta{display:flex;gap:12px;flex-wrap:wrap}
+.map{position:relative;min-height:500px;background:var(--coal-3);overflow:hidden;box-shadow:inset 0 0 0 1px var(--hair)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.9) contrast(.9)}
+.map-tag{position:absolute;left:0;bottom:0;background:var(--ember);color:#1a1107;padding:10px 16px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;pointer-events:none}
+
+/* ================= FOOTER ================= */
+footer{border-top:1px solid var(--hair);background:rgba(0,0,0,.45);padding:70px 0 0}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px}
+footer h4{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:6px 0 18px}
+.fbrand img{height:52px;margin-bottom:16px}
+.fbrand p{color:var(--mute);font-size:14.5px;max-width:32ch;margin:0 0 20px}
+.fsoc{display:flex;gap:8px}
+.fsoc a{width:44px;height:44px;border:1px solid var(--hair);display:grid;place-items:center;transition:.2s}
+.fsoc a:hover{border-color:var(--amber);color:var(--amber)}
+.fsoc svg{width:18px;height:18px}
+.flinks{list-style:none;margin:0;padding:0}
+.flinks a{display:inline-block;padding:5px 0;color:var(--mute);font-size:14.5px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fcol p{margin:0 0 10px;color:var(--mute);font-size:14.5px}
+.fcol p b{color:#fff;font-weight:600}
+.fbottom{margin-top:56px;border-top:1px solid var(--hair);padding:20px 0 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mute-dk)}
+.fbottom nav{display:flex;gap:22px}
+.fbottom a:hover{color:#fff}
+
+/* ================= OVERLAYS ================= */
+.modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:24px}
+.modal.open{display:grid}
+.modal-bg{position:absolute;inset:0;background:rgba(8,8,7,.82)}
+.modal-box{position:relative;background:var(--coal-2);max-width:900px;width:100%;max-height:calc(100vh - 48px);overflow:auto;
+  display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--hair);animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}}
+@keyframes slidein{from{transform:translateX(100%)}}
+.modal-box>img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.modal-tx{padding:44px 40px;display:flex;flex-direction:column;justify-content:center}
+.modal-tx .k{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.modal-tx h3{font-size:34px;margin:10px 0}
+.modal-tx p{color:var(--mute);margin:0 0 20px}
+.modal-tx .pr{font-size:38px;font-weight:700;color:var(--amber);margin-bottom:24px;line-height:1}
+.mbtns{display:flex;gap:10px;flex-wrap:wrap}
+.xbtn{position:absolute;top:0;right:0;z-index:3;width:48px;height:48px;border:0;background:var(--coal);color:#fff;display:grid;place-items:center;cursor:pointer}
+.xbtn:hover{color:var(--amber)}
+.xbtn svg{width:18px;height:18px;stroke-width:2}
+.modal.side{place-items:stretch;padding:0}
+.drawer{position:absolute;top:0;right:0;bottom:0;width:min(86vw,380px);display:flex;flex-direction:column;overflow:auto;
+  background:var(--coal) url("assets/stone.jpg");background-size:520px;border-left:1px solid var(--hair);
+  padding:calc(16px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));animation:slidein .3s cubic-bezier(.2,.8,.2,1)}
+.dtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.dtop img{height:42px}
+.drawer .xbtn{position:static;border:1px solid var(--hair);background:none}
+.dlinks a{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-bottom:1px solid var(--hair);font-size:20px;font-weight:600}
+.dlinks a span{font-size:12px;color:var(--amber);letter-spacing:.1em}
+.dfoot{margin-top:auto;padding-top:26px;display:grid;gap:10px}
+.dfoot p{margin:8px 0 0;font-size:14px;color:var(--mute)}
+.totop{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:110;width:46px;height:46px;border:1px solid var(--hair);
+  background:var(--coal-2);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+.totop:hover{border-color:var(--amber);color:var(--amber)}
+.totop svg{width:20px;height:20px}
+.promo{position:fixed;left:24px;bottom:24px;z-index:150;width:340px;background:var(--paper);color:var(--ink);display:flex;gap:14px;
+  padding:14px;align-items:center;cursor:pointer;box-shadow:0 22px 55px rgba(0,0,0,.5);border-left:3px solid var(--amber);
+  opacity:0;transform:translateY(22px);transition:opacity .45s,transform .45s;pointer-events:none}
+.promo.show{opacity:1;transform:none;pointer-events:auto}
+.promo img{width:66px;height:66px;object-fit:cover;border-radius:50%;flex-shrink:0}
+.promo .k{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-dk)}
+.promo h4{font-size:17px;margin:2px 0}
+.promo p{margin:0;font-size:13px;color:var(--mute-dk)}
+.promo .x{position:absolute;top:2px;right:4px;width:32px;height:32px;background:none;border:0;color:var(--mute-dk);font-size:18px;cursor:pointer}
+
+@media(hover:hover){
+  .cat:hover{background:rgba(255,255,255,.04)}
+  .cat:hover img{transform:rotate(-12deg) scale(1.05)}
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 26px 40px rgba(0,0,0,.45)}
+  .pcard:hover img{transform:rotate(14deg)}
+  .dcard:hover .ph img,.mcard:hover .ph img,.gallery figure:hover img{transform:scale(1.06)}
+}
+@media(min-width:1500px){
+  .ptrack,.mtrack{grid-auto-columns:calc((100% - 96px)/5)}
+}
+@media(max-width:1180px){
+  .dealgrid{grid-template-columns:repeat(2,1fr)}
+  .cats{grid-template-columns:repeat(5,1fr)}
+  .ptrack,.mtrack{grid-auto-columns:calc((100% - 48px)/3)}
+}
+@media(max-height:760px) and (min-width:901px){
+  .visual .side{display:none}
+}
+@media(max-width:900px){
+  :root{--hh:64px}
+  .logo img{height:40px}
+  .mainnav,.h-order,.hcall{display:none}
+  .htools{margin-left:auto;gap:8px}
+  .h-order-sm{display:inline-flex}
+  .burger{display:grid;width:44px;height:44px;border:1px solid var(--hair);background:none;color:#fff;cursor:pointer;place-items:center}
+  .burger svg{width:22px;height:22px}
+
+  .slide{height:auto;min-height:0}
+  .slide .in{display:flex;flex-direction:column;align-items:stretch;padding:calc(var(--hh) + 30px) var(--gut) 100px;gap:0}
+  .visual{width:min(80vw,38vh,560px);margin:18px auto -10%}
+  .hsocial,.harrows{display:none}
+  .hbar-ctl{bottom:18px}
+  .hsegs{flex:1}
+
+  .browse-top{grid-template-columns:1fr;gap:22px}
+  .why{grid-template-columns:1fr}
+  .why-img{width:min(80vw,460px);margin:0 auto -8%;order:2}
+  .step:nth-child(even){margin-left:0}
+  .arrows{display:none}
+  .ptrack,.mtrack{grid-auto-columns:calc((100% - 24px)/2.2)}
+  .dealgrid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,clamp(160px,34vw,280px))}
+  .gallery .big{grid-column:span 2;grid-row:span 1}
+  .gallery .tall{grid-row:span 1}
+  .review{padding:0 8px}
+  .reviews .rarr{display:none}
+  .visit{grid-template-columns:1fr}
+  .map{min-height:340px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:36px 28px}
+  .fbrand{grid-column:1/-1}
+  .modal-box{grid-template-columns:1fr}
+  .modal-box>img{min-height:0;height:260px}
+  .modal-tx{padding:26px 24px 28px}
+  .promo{display:none}
+}
+@media(max-width:560px){
+  body{font-size:15.5px;background-size:380px}
+  .h-order-sm{padding:0 14px}
+  .s-title{font-size:clamp(38px,11vw,52px)}
+  .s-sub{font-size:16px;margin-top:14px}
+  .s-cta{margin-top:24px}
+  .s-cta .btn{min-height:52px;padding:0 16px;flex:1;letter-spacing:.08em}
+  .kicker{font-size:12px;letter-spacing:.18em}
+  .kicker::after{display:none}
+  .slide .in{padding-top:calc(var(--hh) + 22px)}
+  .head{flex-direction:column;align-items:flex-start}
+  .head.center{align-items:center}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .cat{padding:16px 6px 14px;gap:10px}
+  .cat img{width:68px}
+  .cat span{font-size:12px;letter-spacing:.04em}
+  .ptrack,.mtrack,.tabs{margin-left:calc(-1 * var(--gut));margin-right:calc(-1 * var(--gut));padding-left:var(--gut);padding-right:var(--gut);scroll-padding-left:var(--gut)}
+  .ptrack,.mtrack{grid-auto-columns:78%;gap:14px}
+  .tabs button{padding:14px 16px;font-size:12.5px}
+  .dcard{grid-template-columns:1fr;min-height:0}
+  .dcard .ph{aspect-ratio:16/9}
+  .step{grid-template-columns:74px 1fr;gap:16px}
+  .step b{font-size:62px}
+  .gallery{gap:6px}
+  .vrow{grid-template-columns:1fr;gap:4px}
+  .vcta .btn{flex:1 1 100%}
+  .fgrid{gap:30px 20px}
+  .fgrid>.fcol:last-child{grid-column:1/-1}
+  .fbottom{flex-direction:column;align-items:flex-start}
+  .mbtns .btn{flex:1 1 100%}
+  .modal{place-items:end stretch;padding:0}
+  .modal-box{max-height:92vh}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="hdr">
+  <div class="hbar">
+    <a class="logo" href="#"><img src="assets/logo.png" alt="PizzaBoro home"></a>
+    <nav class="mainnav" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#deals">Deals</a>
+      <a href="#popular">Popular</a>
+      <a href="#why">Our pizza</a>
+      <a href="#visit">Find us</a>
+    </nav>
+    <div class="htools">
+      <button class="hicon" id="hsearch" aria-label="Search the menu" aria-expanded="false" aria-controls="spanel"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5 16 16"/></svg></button>
+      <a class="hicon hcall" href="tel:+12492940055" aria-label="Call (249) 294-0055"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+      <a class="btn h-order" data-order href="#">Order online</a>
+      <a class="btn btn-sm h-order-sm" data-order href="#">Order</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-controls="drawerM"><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+    </div>
+  </div>
+  <div class="spanel" id="spanel" hidden>
+    <div class="wrap">
+      <div class="searchbox" role="search">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5 16 16"/></svg>
+        <input id="q2" type="search" placeholder="Search pizza, wings, desserts, deals…" autocomplete="off" aria-label="Search the menu">
+        <div class="results inline" id="r2" hidden></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" aria-roledescription="carousel" aria-label="Featured">
+  <div class="htrack" id="htrack">
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
+      <div class="in">
+        <div class="tx">
+          <div class="kicker" data-n="01">Niagara Falls · Open late</div>
+          <h1 class="s-title"><em>Seriously</em>delicious pizza, straight from the oven</h1>
+          <p class="s-sub">Hand-stretched dough, blistered crust, fired to order — dine in, take out, or delivered hot.</p>
+          <div class="s-cta">
+            <a class="btn" data-order href="#">Order online <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-line" href="#menu">View menu</a>
+          </div>
+        </div>
+        <div class="visual spin"><img src="assets/hero_pizza.png" alt="Margherita pizza"></div>
+      </div>
+    </div>
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
+      <div class="in">
+        <div class="tx">
+          <div class="kicker" data-n="02">Just landed</div>
+          <h2 class="s-title"><em>New</em>crispy sides, fried to order</h2>
+          <p class="s-sub">Fried pickles, cauliflower bites and wings — made for sharing and perfect for late nights.</p>
+          <div class="s-price"><small>From</small><b>$8.99</b></div>
+          <div class="s-cta"><a class="btn" href="#menu" data-tab="1">Try the new sides</a></div>
+        </div>
+        <div class="visual"><img src="assets/c_cauliflower.png" alt="Cauliflower bites"><img class="side" src="assets/c_pickles.png" alt=""></div>
+      </div>
+    </div>
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
+      <div class="in">
+        <div class="tx">
+          <div class="kicker" data-n="03">After 2am only</div>
+          <h2 class="s-title"><em>Late night</em>any large pizza</h2>
+          <div class="s-price"><b>$16.99</b><s>$24.99</s></div>
+          <div class="s-cta">
+            <a class="btn" data-order href="#">Order online</a>
+            <button class="btn btn-line" data-act="open" data-set="deal" data-i="5">Deal details</button>
+          </div>
+        </div>
+        <div class="visual"><img src="assets/c_latenight.png" alt="Large pepperoni pizza"></div>
+      </div>
+    </div>
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
+      <div class="in">
+        <div class="tx">
+          <div class="kicker" data-n="04">Feeds the whole crew</div>
+          <h2 class="s-title"><em>Party perfect</em>two x-large pizzas</h2>
+          <p class="s-sub">Six toppings between them. Built for game night.</p>
+          <div class="s-price"><b>$43.99</b><s>$55.99</s></div>
+          <div class="s-cta">
+            <a class="btn" data-order href="#">Order online</a>
+            <a class="btn btn-line" href="#deals">All deals</a>
+          </div>
+        </div>
+        <div class="visual"><img src="assets/c_meatlovers.png" alt="Meat lovers pizza"><img class="side" src="assets/c_veggie.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+  <div class="hbar-ctl"><div class="in">
+    <div class="hcount" id="hcount">01 <span>/ 04</span></div>
+    <div class="hsegs" id="hsegs"></div>
+    <div class="harrows">
+      <button id="hPrev" aria-label="Previous slide"><svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button id="hNext" aria-label="Next slide"><svg class="ic" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div></div>
+  <div class="hsocial">
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.6"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.63c-.29-.04-1.27-.13-2.42-.13-2.4 0-4.04 1.47-4.04 4.16V9.9H7.6V13h2.74v8h3.26z"/></svg></a>
+    <a href="tel:+12492940055" aria-label="Call"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+  </div>
+</section>
+
+<!-- ================= BROWSE ================= -->
+<section id="browse">
+  <div class="wrap">
+    <div class="browse-top">
+      <div>
+        <div class="kicker" data-n="01">Browse</div>
+        <h2 class="title">What are you <em>craving?</em></h2>
+      </div>
+      <div class="searchbox" role="search">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5 16 16"/></svg>
+        <input id="q1" type="search" placeholder="Search the menu" autocomplete="off" aria-label="Search the menu">
+        <div class="results" id="r1" hidden></div>
+      </div>
+    </div>
+    <div class="cats" id="cats"></div>
+  </div>
+</section>
+
+<!-- ================= POPULAR ================= -->
+<section id="popular" class="sec">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="kicker" data-n="02">Fan favourites</div>
+        <h2 class="title">Popular <em>right now</em></h2>
+      </div>
+      <div class="arrows">
+        <button id="pPrev" aria-label="Previous"><svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button id="pNext" aria-label="Next"><svg class="ic" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="ptrack" id="ptrack"></div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section id="why" class="sec" style="padding-top:0">
+  <div class="wrap why">
+    <div class="why-img"><img src="assets/c_supreme.png" alt="Supreme pizza" loading="lazy"></div>
+    <div>
+      <div class="kicker" data-n="03">Our pizza</div>
+      <h2 class="title">Why it <em>tastes</em> better</h2>
+      <ol class="steps">
+        <li class="step"><b>01</b><div><h3>Dough made fresh, every day</h3><p>Stretched by hand and rested properly, so the crust is light, chewy and blistered.</p></div></li>
+        <li class="step"><b>02</b><div><h3>Sauce from whole tomatoes</h3><p>Crushed in-house and seasoned simply — no paste, no shortcuts.</p></div></li>
+        <li class="step"><b>03</b><div><h3>Real toppings, loaded generously</h3><p>Proper mozzarella, cured meats and fresh veg, sliced the same day.</p></div></li>
+        <li class="step"><b>04</b><div><h3>Fired to order, open late</h3><p>Nothing sits under a heat lamp. Every pie comes out of the oven for you — even at 3am.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEALS ================= -->
+<section id="deals" class="sec">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="kicker" data-n="04">Limited time</div>
+        <h2 class="title">Deals <em>&amp;</em> offers</h2>
+      </div>
+      <a class="olink dark" href="#" data-order>Order a deal <svg class="ic" viewBox="0 0 24 24" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="dealgrid" id="dealGrid"></div>
+  </div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section id="menu" class="sec">
+  <div class="wrap">
+    <div class="head center">
+      <div class="kicker" data-n="05">Quality meal</div>
+      <h2 class="title" style="font-size:clamp(40px,5vw,76px)">The <em>menu</em></h2>
+    </div>
+    <div class="tabs" id="menuTabs" role="tablist" aria-label="Menu categories"></div>
+    <div class="mtrack" id="mtrack" tabindex="0" aria-label="Menu items, scroll sideways"></div>
+    <div class="mnav" id="mNav">
+      <div class="mbar"><i id="mBar"></i></div>
+      <div class="arrows">
+        <button id="mPrev" aria-label="Previous items"><svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button id="mNext" aria-label="Next items"><svg class="ic" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center">
+      <div class="kicker" data-n="06">From our oven</div>
+      <h2 class="title">Made fresh, <em>every night</em></h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/sampler.jpg" alt="BBQ chicken pizza on a board" loading="lazy"></figure>
+      <figure class="big"><img src="assets/supreme.jpg" alt="Supreme pizza" loading="lazy"><figcaption>Signature supreme</figcaption></figure>
+      <figure class="tall"><img src="assets/margherita.jpg" alt="Margherita" loading="lazy"></figure>
+      <figure><img src="assets/wings.jpg" alt="Wings" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center">
+      <div class="kicker" data-n="07">Reviews</div>
+      <h2 class="title">What our <em>regulars</em> say</h2>
+    </div>
+    <div class="reviews">
+      <div class="rtrack" id="rtrack">
+        <div class="review"><q>Best late-night pizza in Niagara Falls, hands down. Crust is perfect and it actually shows up hot.</q><cite>Jordan M.<span>★★★★★</span></cite></div>
+        <div class="review"><q>The fried pickles are dangerous. Ordered the party deal for game night and everyone was stuffed.</q><cite>Priya S.<span>★★★★★</span></cite></div>
+        <div class="review"><q>Friendly staff, fast pickup and the margherita tastes like it came from a proper Italian oven.</q><cite>Alex R.<span>★★★★★</span></cite></div>
+      </div>
+      <button class="rarr l" id="rPrev" aria-label="Previous review"><svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="rarr r" id="rNext" aria-label="Next review"><svg class="ic" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      <div class="rdots" id="rdots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section id="visit" class="sec">
+  <div class="wrap visit">
+    <div>
+      <div class="kicker" data-n="08">Come say hi</div>
+      <h2 class="title">Location <em>&amp;</em> hours</h2>
+      <dl class="vlist">
+        <div class="vrow"><dt>Address</dt><dd>5986 Lundy's Ln, Niagara Falls, ON L2G 1T1</dd></div>
+        <div class="vrow"><dt>Hours</dt><dd>Every day · 2:00 am – 4:00 am</dd></div>
+        <div class="vrow"><dt>Phone</dt><dd><a href="tel:+12492940055">(249) 294-0055</a></dd></div>
+        <div class="vrow"><dt>Service</dt><dd>Dine-in · Takeout · Local delivery</dd></div>
+      </dl>
+      <div class="vcta">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=5986%20Lundy%27s%20Ln%2C%20Niagara%20Falls%2C%20ON%20L2G%201T1" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn-line" href="tel:+12492940055">Call to order</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Map showing PizzaBoro at 5986 Lundy&#39;s Ln, Niagara Falls" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=5986%20Lundy%27s%20Ln%2C%20Niagara%20Falls%2C%20ON%20L2G%201T1&amp;z=15&amp;output=embed"></iframe>
+      <span class="map-tag">PizzaBoro · Lundy's Ln</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <img src="assets/logo.png" alt="PizzaBoro">
+        <p>Hand-stretched pizza, wings and sides in Niagara Falls — open late, every night.</p>
+        <div class="fsoc">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.6"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.63c-.29-.04-1.27-.13-2.42-.13-2.4 0-4.04 1.47-4.04 4.16V9.9H7.6V13h2.74v8h3.26z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="flinks">
+          <li><a href="#menu">Menu</a></li><li><a href="#deals">Deals &amp; offers</a></li>
+          <li><a href="#popular">Popular</a></li><li><a href="#why">Our pizza</a></li><li><a href="#visit">Find us</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Hours</h4>
+        <p><b>Every day</b><br>2:00 am – 4:00 am</p>
+        <p>Dine-in · Takeout<br>Local delivery</p>
+      </div>
+      <div class="fcol">
+        <h4>Contact</h4>
+        <p>5986 Lundy's Ln<br>Niagara Falls, ON L2G 1T1</p>
+        <p><a href="tel:+12492940055"><b>(249) 294-0055</b></a></p>
+        <a class="btn btn-sm" data-order href="#">Order online</a>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 PizzaBoro — The Finest Pizzeria</span>
+      <nav aria-label="Legal"><a href="#">Privacy policy</a><a href="#">Terms</a><a href="#">Accessibility</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= ITEM DETAILS ================= -->
+<div class="modal" id="itemM" role="dialog" aria-modal="true" aria-labelledby="mName">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box">
+    <button class="xbtn" data-close aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <img id="mImg" src="" alt="">
+    <div class="modal-tx">
+      <span class="k" id="mKick"></span>
+      <h3 id="mName"></h3>
+      <p id="mDesc"></p>
+      <div class="pr" id="mPrice"></div>
+      <div class="mbtns">
+        <a class="btn" data-order data-close href="#">Order online</a>
+        <a class="btn btn-line" href="tel:+12492940055">Call to order</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MOBILE MENU ================= -->
+<div class="modal side" id="drawerM" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="modal-bg" data-close></div>
+  <aside class="drawer">
+    <div class="dtop">
+      <img src="assets/logo.png" alt="PizzaBoro">
+      <button class="xbtn" data-close aria-label="Close menu"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <nav class="dlinks" aria-label="Mobile">
+      <a href="#menu" data-close>Menu <span>05</span></a>
+      <a href="#deals" data-close>Deals &amp; offers <span>04</span></a>
+      <a href="#popular" data-close>Popular <span>02</span></a>
+      <a href="#why" data-close>Our pizza <span>03</span></a>
+      <a href="#visit" data-close>Find us <span>08</span></a>
+    </nav>
+    <div class="dfoot">
+      <a class="btn" data-order data-close href="#">Order online</a>
+      <a class="btn btn-line" href="tel:+12492940055">Call (249) 294-0055</a>
+      <p>5986 Lundy's Ln, Niagara Falls<br>Open 2:00 am – 4:00 am, every day</p>
+    </div>
+  </aside>
+</div>
+
+<button class="totop" id="totop" aria-label="Back to top"><svg class="ic" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button>
+
+<div class="promo" id="promo">
+  <button class="x" id="promoX" aria-label="Dismiss">×</button>
+  <img src="assets/c_pickles.png" alt="">
+  <div><span class="k">New this week</span><h4>Fried pickles</h4><p>Crispy, bold — $8.99</p></div>
+</div>
+
+<script>
+/* Every "Order online" button points here. On the live Wix site, set it to the online-ordering / Stores page. */
+const ORDER_URL = '#menu';
+
+/* Rows are shaped like Wix CMS collection items, so porting to Repeaters is a field mapping. */
+const POPULAR = [
+  {name:"Supreme", price:"$24.99", img:"assets/supreme.jpg", cut:"assets/c_supreme.png", tag:"Best seller", size:'12" hand-stretched',
+   blurb:"Pepperoni, mushroom, onion, spinach", kicker:"Fan favourite",
+   desc:"Our best seller. Hand-stretched base, san marzano sauce, mozzarella and a loaded topping stack."},
+  {name:"Meat lovers", price:"$26.99", img:"assets/meatlovers.jpg", cut:"assets/c_meatlovers.png", size:'12" hand-stretched',
+   blurb:"Pepperoni, bacon, sausage, ham", kicker:"Fan favourite", desc:"Four meats, a lot of cheese, and no apologies."},
+  {name:"Margherita", price:"$18.99", img:"assets/margherita.jpg", cut:"assets/c_margherita.png", size:'12" hand-stretched',
+   blurb:"San marzano, fior di latte, basil", kicker:"The classic", desc:"San marzano tomato, fior di latte and fresh basil. Simple, done right."},
+  {name:"Fried pickles", price:"$8.99", img:"assets/pickles.jpg", cut:"assets/c_pickles.png", tag:"New", size:"Serves 1–2",
+   blurb:"Crispy dill spears, house dip", kicker:"Just landed", desc:"Dill spears in a seasoned crunch coat, fried golden and served with our house dip."},
+  {name:"Wings", price:"$14.99", img:"assets/wings.jpg", cut:"assets/c_wings.png", size:"10 pieces",
+   blurb:"Buffalo, BBQ or honey garlic", kicker:"Fan favourite", desc:"Ten crispy wings tossed in buffalo, BBQ or honey garlic, with ranch or blue cheese."},
+  {name:"Cauliflower bites", price:"$12.99", img:"assets/cauliflower.jpg", cut:"assets/c_cauliflower.png", tag:"New", size:"Serves 2",
+   blurb:"Golden florets, signature sauce", kicker:"Just landed", desc:"Golden cauliflower florets tossed in our signature sauce with a creamy side dip."},
+];
+
+const DEALS = [
+  {name:"X-Large 4 topping pizza", sub:"Any four toppings", price:"$22.99", save:"Save $7", img:"assets/meatlovers.jpg",
+   kicker:"Limited time", desc:"One x-large hand-stretched pizza with any four toppings you like."},
+  {name:"Large 3 topping + 2 drinks + 2 dips", sub:"Feeds two", price:"$21.99", save:"Save $6", img:"assets/supreme.jpg",
+   kicker:"Limited time", desc:"A large three-topping pizza with two fountain drinks and two dips. Enough for two."},
+  {name:"Pizza sampler", sub:"Three small signature pizzas", price:"$29.99", save:"Save $9", img:"assets/sampler.jpg",
+   kicker:"Limited time", desc:"Three small signature pies, so the table gets a bit of everything."},
+  {name:"Party perfect — 2 x-large pizzas", sub:"Six toppings total", price:"$43.99", save:"Save $12", img:"assets/veggie.jpg",
+   kicker:"Limited time", desc:"Two x-large pizzas with six toppings between them. Built for a crowd."},
+  {name:"Big 3 — three large pizzas", sub:"Two toppings each", price:"$44.99", save:"Save $15", img:"assets/margherita.jpg",
+   kicker:"Limited time", desc:"Three large pizzas, two toppings on each. Our best per-slice price."},
+  {name:"Late night large", sub:"Any large pizza after 2am", price:"$16.99", save:"Save $8", img:"assets/latenight.jpg",
+   kicker:"After 2am only", desc:"Any large pizza, any toppings, after 2am. Because the oven is already on."},
+];
+
+const MENU = [
+  {cat:"Signature pizzas", items:[
+    {n:"Supreme", d:"Pepperoni, mushroom, onion, spinach", p:"$24.99", img:"assets/supreme.jpg"},
+    {n:"Margherita", d:"San marzano, fior di latte, basil", p:"$18.99", img:"assets/margherita.jpg"},
+    {n:"Meat lovers", d:"Pepperoni, bacon, sausage, ham", p:"$26.99", img:"assets/meatlovers.jpg"},
+    {n:"Veggie garden", d:"Peppers, olives, mushroom, red onion", p:"$21.99", img:"assets/veggie.jpg"},
+    {n:"BBQ chicken", d:"Pulled chicken, pineapple, red onion, cilantro", p:"$23.99", img:"assets/sampler.jpg"}]},
+  {cat:"Sides", items:[
+    {n:"Fried pickles", d:"Crispy dill spears, house dip", p:"$8.99", img:"assets/pickles.jpg"},
+    {n:"Cauliflower bites", d:"Signature sauce, creamy dip", p:"$12.99", img:"assets/cauliflower.jpg"},
+    {n:"Garlic bread", d:"Fresh baked, herb butter", p:"$6.99", img:"assets/garlicbread.jpg"},
+    {n:"Wings", d:"Buffalo, BBQ or honey garlic", p:"$14.99", img:"assets/wings.jpg"}]},
+  {cat:"Drinks", items:[
+    {n:"Fountain pop", d:"Assorted flavours, free refills", p:"$2.99", img:"assets/cola.jpg"},
+    {n:"Italian soda", d:"Blood orange or lemon", p:"$3.99", img:"assets/soda.jpg"},
+    {n:"Iced tea", d:"Brewed fresh daily", p:"$2.99", img:"assets/icedtea.jpg"}]},
+  {cat:"Desserts", items:[
+    {n:"Cinnamon bun", d:"Warm, glazed, baked to order", p:"$7.99", img:"assets/cinnamon.jpg"},
+    {n:"Chocolate chip cookie", d:"Soft centre, crisp edge", p:"$3.49", img:"assets/cookie.jpg"},
+    {n:"Tiramisu", d:"Classic, single serve", p:"$6.99", img:"assets/tiramisu.jpg"}]},
+];
+const MENU_FLAT = MENU.flatMap(c => c.items.map(i => ({name:i.n, price:i.p, img:i.img, kicker:c.cat, desc:i.d})));
+
+const CATS = [
+  {label:"Signature", img:"assets/c_supreme.png", tab:0},
+  {label:"Veggie", img:"assets/c_veggie.png", tab:0},
+  {label:"Meat lovers", img:"assets/c_meatlovers.png", tab:0},
+  {label:"New sides", img:"assets/c_pickles.png", tab:1, badge:"New"},
+  {label:"Wings", img:"assets/c_wings.png", tab:1},
+  {label:"Garlic bread", img:"assets/garlicbread.jpg", tab:1},
+  {label:"Deals", img:"assets/c_sampler.png", go:"#deals", badge:"Save"},
+  {label:"Drinks", img:"assets/cola.jpg", tab:2},
+  {label:"Desserts", img:"assets/tiramisu.jpg", tab:3},
+];
+
+const SETS = {pop:POPULAR, deal:DEALS, menu:MENU_FLAT};
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ARROW = '<svg class="ic" viewBox="0 0 24 24" width="14" height="14" style="stroke-width:2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const orderLink = (cls, name) => `<a class="olink ${cls}" data-order href="#" aria-label="Order ${esc(name)}">Order ${ARROW}</a>`;
+
+/* ---------- shared scroll-snap carousel controls ---------- */
+function carousel(track, o = {}){
+  const max = () => track.scrollWidth - track.clientWidth;
+  const step = () => (track.firstElementChild?.offsetWidth || track.clientWidth) + (parseFloat(getComputedStyle(track).columnGap) || 0);
+  const sync = () => {
+    const m = max();
+    if (o.nav) o.nav.hidden = m <= 2;
+    if (o.prev) o.prev.disabled = track.scrollLeft <= 2;
+    if (o.next) o.next.disabled = track.scrollLeft >= m - 2;
+    if (o.bar) o.bar.style.width = Math.min(100, (track.scrollLeft + track.clientWidth) / track.scrollWidth * 100) + '%';
+  };
+  if (o.prev) o.prev.onclick = () => track.scrollBy({left: -step()});
+  if (o.next) o.next.onclick = () => track.scrollBy({left: step()});
+  track.addEventListener('scroll', sync, {passive:true});
+  addEventListener('resize', sync);
+  sync();
+  return {sync, reset(){ track.style.scrollBehavior = 'auto'; track.scrollLeft = 0; track.style.scrollBehavior = ''; sync(); }};
+}
+
+/* ---------- render ---------- */
+$('#cats').innerHTML = CATS.map(c => `
+  <a class="cat" href="${c.go || '#menu'}" ${c.tab != null ? `data-tab="${c.tab}"` : ''}>
+    ${c.badge ? `<em>${esc(c.badge)}</em>` : ''}<img src="${c.img}" alt="" loading="lazy"><span>${esc(c.label)}</span>
+  </a>`).join('');
+const cats = [...document.querySelectorAll('.cat')];
+cats[0].classList.add('on');
+cats.forEach(t => t.addEventListener('click', () => cats.forEach(x => x.classList.toggle('on', x === t))));
+
+$('#ptrack').innerHTML = POPULAR.map((f,i) => `
+  <article class="pcard">
+    <button class="open" data-act="open" data-set="pop" data-i="${i}" aria-label="View ${esc(f.name)}"></button>
+    ${f.tag ? `<span class="ptag">${esc(f.tag)}</span>` : ''}
+    <img src="${f.cut}" alt="" loading="lazy">
+    <h3>${esc(f.name)}</h3>
+    <p>${esc(f.blurb)}</p>
+    <div class="pline"><div><span class="pr">${esc(f.price)}</span><small>${esc(f.size)}</small></div>${orderLink('', f.name)}</div>
+  </article>`).join('');
+carousel($('#ptrack'), {prev:$('#pPrev'), next:$('#pNext')});
+
+$('#dealGrid').innerHTML = DEALS.map((d,i) => `
+  <article class="dcard">
+    <button class="open" data-act="open" data-set="deal" data-i="${i}" aria-label="View deal: ${esc(d.name)}"></button>
+    <div class="ph"><span class="save">${esc(d.save)}</span><img src="${d.img}" alt="" loading="lazy"></div>
+    <div class="tx">
+      <h3>${esc(d.name)}</h3>
+      <p class="sub">${esc(d.sub)}</p>
+      <div class="pr">${esc(d.price)}</div>
+      ${orderLink('dark', d.name)}
+    </div>
+  </article>`).join('');
+
+$('#menuTabs').innerHTML = MENU.map((c,i) =>
+  `<button role="tab" data-cat="${i}" aria-selected="${i === 0}">${esc(c.cat)}</button>`).join('');
+const menuBase = [];
+MENU.reduce((n,c) => (menuBase.push(n), n + c.items.length), 0);
+const menuCar = carousel($('#mtrack'), {prev:$('#mPrev'), next:$('#mNext'), bar:$('#mBar'), nav:$('#mNav')});
+function renderMenu(ci){
+  const base = menuBase[ci];
+  $('#mtrack').innerHTML = MENU[ci].items.map((it,k) => `
+    <article class="mcard">
+      <button class="open" data-act="open" data-set="menu" data-i="${base+k}" aria-label="View ${esc(it.n)}"></button>
+      <div class="ph"><img src="${it.img}" alt="" loading="lazy"></div>
+      <div class="mhd"><h4>${esc(it.n)}</h4><i></i><b>${esc(it.p)}</b></div>
+      <p>${esc(it.d)}</p>
+      ${orderLink('dark', it.n)}
+    </article>`).join('');
+  $('#menuTabs').querySelectorAll('button').forEach(b => {
+    const on = b.dataset.cat === String(ci);
+    b.setAttribute('aria-selected', on);
+    if (on) b.parentElement.scrollTo({left: b.offsetLeft - b.parentElement.offsetLeft - 22, behavior:'smooth'});
+  });
+  wireOrders($('#mtrack'));
+  menuCar.reset();
+}
+function wireOrders(root = document){ root.querySelectorAll('[data-order]').forEach(a => a.href = ORDER_URL); }
+wireOrders();
+renderMenu(0);
+
+/* ---------- hero: swipe, arrows, segment bar; autoplay pauses only while touched / off-screen ---------- */
+const ht = $('#htrack'), slides = [...ht.children], N = slides.length, heroEl = ht.parentElement;
+let hi = 0;
+$('#hsegs').innerHTML = slides.map((_,i) => `<button class="hseg" data-slide="${i}" aria-label="Go to slide ${i+1}"><i></i></button>`).join('');
+const segs = [...document.querySelectorAll('.hseg')];
+const goSlide = i => ht.scrollTo({left: ht.clientWidth * ((i + N) % N)});
+function paintHero(){
+  slides.forEach((s,i) => s.inert = i !== hi);
+  segs.forEach((s,i) => { s.setAttribute('aria-current', i === hi); if (i !== hi) s.style.setProperty('--p', i < hi ? 1 : 0); });
+  $('#hcount').innerHTML = `${String(hi+1).padStart(2,'0')} <span>/ ${String(N).padStart(2,'0')}</span>`;
+}
+ht.addEventListener('scroll', () => {
+  const i = Math.round(ht.scrollLeft / ht.clientWidth);
+  if (i !== hi) { hi = i; paintHero(); }
+}, {passive:true});
+paintHero();
+$('#hPrev').onclick = () => goSlide(hi - 1);
+$('#hNext').onclick = () => goSlide(hi + 1);
+addEventListener('resize', () => { ht.style.scrollBehavior = 'auto'; ht.scrollLeft = ht.clientWidth * hi; ht.style.scrollBehavior = ''; });
+
+const DUR = 5500;
+let elapsed = 0, last = performance.now(), holding = false, idle, shown = hi;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+heroEl.addEventListener('pointerdown', () => { holding = true; clearTimeout(idle); }, {passive:true});
+['pointerup','pointercancel'].forEach(ev => heroEl.addEventListener(ev, () => {
+  clearTimeout(idle); idle = setTimeout(() => holding = false, 3000); }, {passive:true}));
+function loop(now){
+  const dt = now - last; last = now;
+  if (hi !== shown) { shown = hi; elapsed = 0; }
+  if (!reduce && !holding && !document.hidden && scrollY < heroEl.offsetHeight * 0.6) elapsed += dt;
+  if (elapsed >= DUR) { elapsed = 0; goSlide(hi + 1); }
+  segs[hi].style.setProperty('--p', reduce ? 1 : Math.min(elapsed / DUR, 1).toFixed(3));
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+/* ---------- reviews ---------- */
+const rt = $('#rtrack'), revs = [...rt.children];
+let ri = 0;
+$('#rdots').innerHTML = revs.map((_,i) => `<button data-rev="${i}" aria-label="Review ${i+1}"></button>`).join('');
+const goRev = i => rt.scrollTo({left: rt.clientWidth * ((i + revs.length) % revs.length)});
+const paintRev = () => document.querySelectorAll('#rdots button').forEach((d,i) => d.setAttribute('aria-current', i === ri));
+rt.addEventListener('scroll', () => { const i = Math.round(rt.scrollLeft / rt.clientWidth); if (i !== ri) { ri = i; paintRev(); } }, {passive:true});
+paintRev();
+$('#rPrev').onclick = () => goRev(ri - 1);
+$('#rNext').onclick = () => goRev(ri + 1);
+
+/* ---------- overlays ---------- */
+let lastFocus;
+function openModal(id){
+  lastFocus = document.activeElement;
+  document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+  const m = $('#' + id);
+  m.classList.add('open');
+  document.documentElement.style.overflow = 'hidden';
+  m.querySelector('.xbtn').focus({preventScroll:true});
+}
+function closeModals(){
+  const had = document.querySelector('.modal.open');
+  document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+  document.documentElement.style.overflow = '';
+  if (had && lastFocus) lastFocus.focus({preventScroll:true});
+}
+function openItem(it){
+  hideResults(); closeSearch();
+  $('#mImg').src = it.img; $('#mImg').alt = it.name;
+  $('#mKick').textContent = it.kicker || '';
+  $('#mName').textContent = it.name;
+  $('#mDesc').textContent = it.desc || '';
+  $('#mPrice').textContent = it.price;
+  openModal('itemM');
+}
+$('#burger').onclick = () => { closeSearch(); openModal('drawerM'); };
+
+/* ---------- search ---------- */
+const INDEX = [
+  ...MENU_FLAT.map((it,i) => ({set:'menu', i, it, label:it.kicker})),
+  ...DEALS.map((it,i) => ({set:'deal', i, it, label:'Deal'})),
+].map(x => ({...x, hay:`${x.it.name} ${x.it.desc} ${x.label} ${x.set === 'deal' ? 'deals offer combo' : ''}`.toLowerCase()}));
+function hideResults(){ document.querySelectorAll('.results').forEach(r => r.hidden = true); }
+function attachSearch(input, box){
+  const render = () => {
+    const words = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) { box.hidden = true; return; }
+    const hits = INDEX.filter(x => words.every(w => x.hay.includes(w))).slice(0, 8);
+    box.innerHTML = hits.length ? hits.map(x => `
+      <button class="rrow" data-act="open" data-set="${x.set}" data-i="${x.i}">
+        <img src="${x.it.img}" alt=""><span><b>${esc(x.it.name)}</b><small>${esc(x.label)}</small></span><em>${esc(x.it.price)}</em>
+      </button>`).join('')
+      : `<div class="rempty">No matches for “${esc(input.value.trim())}”. Try pizza, wings or dessert.</div>`;
+    box.hidden = false;
+  };
+  input.addEventListener('input', render);
+  input.addEventListener('focus', render);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); box.querySelector('.rrow')?.click(); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); box.querySelector('.rrow')?.focus(); }
+  });
+  box.addEventListener('keydown', e => {
+    const rows = [...box.querySelectorAll('.rrow')], k = rows.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown' && k < rows.length - 1) { e.preventDefault(); rows[k + 1].focus(); }
+    if (e.key === 'ArrowUp') { e.preventDefault(); (k > 0 ? rows[k - 1] : input).focus(); }
+  });
+}
+attachSearch($('#q1'), $('#r1'));
+attachSearch($('#q2'), $('#r2'));
+const hdr = $('#hdr'), spanel = $('#spanel'), sbtn = $('#hsearch');
+function openSearch(){ hdr.classList.add('solid'); spanel.hidden = false; sbtn.setAttribute('aria-expanded', 'true'); $('#q2').focus(); }
+function closeSearch(){ if (spanel.hidden) return; hdr.classList.remove('solid'); spanel.hidden = true; sbtn.setAttribute('aria-expanded', 'false'); }
+sbtn.onclick = () => spanel.hidden ? openSearch() : closeSearch();
+
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-act="open"]');
+  if (a) return openItem(SETS[a.dataset.set][+a.dataset.i]);
+  const seg = e.target.closest('[data-slide]');
+  if (seg) return goSlide(+seg.dataset.slide);
+  const rv = e.target.closest('[data-rev]');
+  if (rv) return goRev(+rv.dataset.rev);
+  const cat = e.target.closest('[data-cat]');
+  if (cat) return renderMenu(+cat.dataset.cat);
+  const tab = e.target.closest('[data-tab]');
+  if (tab) renderMenu(+tab.dataset.tab);
+  if (e.target.closest('[data-close]')) closeModals();
+  if (!e.target.closest('.searchbox')) hideResults();
+  if (!e.target.closest('.site-header')) closeSearch();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModals(); hideResults(); closeSearch(); }
+  if (e.key === '/' && !e.target.closest('input,textarea') && !document.querySelector('.modal.open')) { e.preventDefault(); openSearch(); }
+});
+
+/* ---------- header state + active section ---------- */
+const totop = $('#totop');
+addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', scrollY > 40);
+  totop.classList.toggle('show', scrollY > 900);
+}, {passive:true});
+totop.onclick = () => scrollTo({top:0});
+const navLinks = [...document.querySelectorAll('.mainnav a')];
+const spy = new IntersectionObserver(entries => entries.forEach(en => {
+  if (en.isIntersecting) navLinks.forEach(l => l.setAttribute('aria-current', l.hash === '#' + en.target.id));
+}), {rootMargin:'-45% 0px -50% 0px'});
+['browse','popular','why','deals','menu','gallery','reviews','visit'].forEach(id => spy.observe(document.getElementById(id)));
+
+/* ---------- "new this week" popup — laptops only ---------- */
+if (matchMedia('(min-width: 901px)').matches) setTimeout(() => $('#promo').classList.add('show'), 6000);
+$('#promoX').onclick = e => { e.stopPropagation(); $('#promo').classList.remove('show'); };
+$('#promo').onclick = () => { $('#promo').classList.remove('show'); openItem(MENU_FLAT[5]); };
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+Placeholder photos — all from Wikimedia Commons. Replace with PizzaBoro's own
+shots before launch, or keep these and carry the attribution below.
+
+BACKGROUND
+stone.jpg        "1227 Cadic - Cerova vrchovina"   Mineralysk    CC0 *
+                 * public domain, NO attribution required.
+                 Cropped, darkened, offset-healed into a seamless tile.
+
+PIZZAS
+hero_pizza.png   "Margherita Originale"            Mario56       CC BY-SA 3.0
+                 (circular cut-out of the same photo as margherita.jpg)
+margherita.jpg   "Margherita Originale"            Mario56       CC BY-SA 3.0
+supreme.jpg      "Pizza Tradicion Napolitana"      Rjcastillo    CC BY-SA 4.0
+sampler.jpg      "Pizza food"                      Arungupta408  CC BY-SA 4.0
+meatlovers.jpg   "The Butcher (All Meat) pizza"     Phil Guest    CC BY-SA 2.0
+veggie.jpg       "Vegetarian pizza"                 Food Recipes  CC BY 2.0
+latenight.jpg    "Pepperoni Salami & Sausage ..."   Willis Lam    CC BY-SA 2.0
+
+SIDES
+pickles.jpg      "Fried pickles closeup"           Guanaco       CC BY-SA 4.0
+cauliflower.jpg  "BuffaloCauliflower-1206"     DC Central Kitchen CC BY 2.0
+garlicbread.jpg  "OMGsplosion likes Garlic Bread"  OMGsplosion   CC BY-SA 3.0
+wings.jpg        "Chicken Wings, Baton Rouge"      Paul Lowry    CC BY 4.0
+
+DRINKS
+cola.jpg         "Tumbler of cola with ice"        Simon Cousins CC BY 2.0
+soda.jpg         "Strawberry thyme lemonade"       Shari's Berries CC BY 2.0
+icedtea.jpg      "Glass of red lemonade 01"        Smirkybec     CC BY 4.0
+
+DESSERTS
+cinnamon.jpg     "Cinnamon bun - Milfey Patisserie" Andy Li      CC0 *
+cookie.jpg       "Chocolate chip cookies on board"  Mshuang2     CC0 *
+tiramisu.jpg     "Tiramisu in Ankara"               E4024        CC BY-SA 4.0
+
+OTHER
+brush.png — torn edge, traced from the reference template. Mockup only.
+logo.png / logo_white.png — PizzaBoro's own mark, keyed off the old site
+            screenshot. logo_white is used on the red column, where the
+            logo's red "BORO" would otherwise disappear.
